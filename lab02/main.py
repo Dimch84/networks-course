@@ -2,11 +2,13 @@ from flask import Flask, jsonify
 from flask import make_response
 from flask import request
 from flask import abort
+from flask import send_file
+
+import werkzeug
 
 app = Flask(__name__)
 
 products = []
-
 
 """
 Добавить новый продукт. При этом его id должен сгенерироваться автоматически
@@ -90,6 +92,34 @@ GET /products
 def get_products():
     return jsonify(products)
     
+
+"""
+Загрузить иконку:
+POST product/{product_id}/image
+Запрос содержит бинарный файл — изображение
+"""
+@app.route('/product/<int:product_id>/image', methods=['POST'])
+def create_image(product_id):
+    f = request.files['icon']
+
+    product = list(filter(lambda t: t['id'] == product_id, products))
+    if len(product) == 0:
+        abort(404)
+
+    f.save(f'{product_id}.png')
+    product[0]['icon'] = f'{product_id}.png'
+    return "OK", 201
+
+
+@app.route('/product/<int:product_id>/image')
+def get_image(product_id):
+    product = list(filter(lambda t: t['id'] == product_id, products))
+    if len(product) == 0:
+        abort(404)
+
+    filename = product[0]["icon"]
+    return send_file(filename, mimetype='image/gif')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
