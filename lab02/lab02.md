@@ -65,12 +65,12 @@
 
 #### Демонстрация работы
 
-     <img src="images/image_1.png" width=500 />
-     <img src="images/image_2.png" width=500 />
-     <img src="images/image_3.png" width=500 />
-     <img src="images/image_4.png" width=500 />
-     <img src="images/image_5.png" width=500 />
-     <img src="images/image_6.png" width=500 />
+<img src="images/image_1.png" width=500 />
+<img src="images/image_2.png" width=500 />
+<img src="images/image_3.png" width=500 />
+<img src="images/image_4.png" width=500 />
+<img src="images/image_5.png" width=500 />
+<img src="images/image_6.png" width=500 />
      
 ### Задание В (4 балла)
 Пусть ваш продукт также имеет иконку (небольшую картинку). Формат иконки (картинки) может
@@ -92,7 +92,10 @@
 ```
 
 #### Демонстрация работы
-todo
+правда я не очень поняла, что нужно менять в задании А((
+
+<img src="images/image_7.png" width=500 />
+<img src="images/image_8.png" width=500 />
 
 ---
 
